@@ -1,0 +1,16 @@
+.zero {
+    width: 100%;
+    background-color: transparent;
+}
+
+.um {
+    width: 33%;
+}
+
+.dois {
+    width: 66%;
+}
+
+.tres {
+    width: 100%;
+}
