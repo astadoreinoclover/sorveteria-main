@@ -13,7 +13,19 @@ function Comentario() {
     },[])
 
     const listaComentarios = sorvete.comentarios ? sorvete.comentarios.map(comentario => (
-        <h1>{comentario.text}</h1>
+        <div className="mb-5 border border-primary p-3 bg-primary rounded">
+            <div className="d-flex justify-content-between">
+                <div>
+                    <img className="rounded-circle me-3" height={75} width={75} src={`../${comentario.perfil}`} />
+                    <span className="h2 text-white">{comentario.nome}</span>
+                </div>
+                <div className="d-flex align-items-center me-5 h1 text-warning">
+                    {comentario.avaliacao} 
+                    <img className="ms-2" height={30} width={30} src="../star-fill.svg" alt="" />
+                </div>
+            </div>
+            <div className="ms-5 text-white h3 ps-5">{comentario.text}</div>
+        </div>
     )) : <h1>Não ha comentarios</h1>;
 
 
@@ -28,9 +40,8 @@ function Comentario() {
         <Link className="d-flex align-self-start btn btn-danger mt-3" to={'/'} >Voltar</Link>
         </div>
         <div className="col-sm-6 d-flex flex-column">
-            <div>Comentarios:</div>
+            <div style={{marginBottom:30}} className="text-success h3">Comentarios:</div>
             {listaComentarios}
-
         </div>
         </div>
         </>
